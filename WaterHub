@@ -205,4 +205,21 @@ end
 end
 end)
 end)
+elseif game.PlaceId == 4857069142 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("WaterHub | Made By Water#1001", "Ocean")
+
+    -- Autofarm
+    local Autoclick = Window:NewTab("Autoclick")
+    local AutoclickSection = Autoclick:NewSection("Autoclick")
+    
+      AutoclickSection:NewToggle("Auto Click", "Make your player autoclick", function(v)
+        getgenv().autoclicker = v
+        while true do
+            if not getgenv().autoclicker then return end
+           local Event = game:GetService("Workspace").Events.Give
+Event:FireServer()
+            wait(math.huge)
+        end
+    end)
 end
