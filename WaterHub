@@ -229,7 +229,6 @@ elseif game.PlaceId == 6459707978 then
 
     -- Autofarm
     local Autofarm = Window:NewTab("Autofarm")
-    local AutofarmSection = Autofarm:NewSection("A message will pop up in your taskbar")
     local AutofarmSection = Autofarm:NewSection("Autofarm")
 
 AutofarmSection:NewButton("Autofarm", "Makes everything for you", function(v)
