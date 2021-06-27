@@ -221,5 +221,29 @@ elseif game.PlaceId == 4857069142 then
 Event:FireServer()
             wait(math.huge)
         end
-    end)
+      end)
+
+elseif game.PlaceId == 6459707978 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("WaterHub | Made By Water#1001", "Ocean")
+
+    -- Autofarm
+    local Autofarm = Window:NewTab("Autofarm")
+    local AutofarmSection = Autofarm:NewSection("Autofarm")
+
+AutofarmSection:NewButton("Autofarm", "Makes everything for you", function(v)
+    	_G.Enabled = true ---Enable script
+	_G.Stock = true --Auto restock all racks
+	_G.Deliver = true --Auto sell everything
+
+	loadstring(game:HttpGet('https://pastebin.com/raw/VkRfdPp1'))()
+end)
+
+AutofarmSection:NewButton("Disable Autofarm", "Disables Autofarm", function(v)
+        	_G.Enabled = false ---Enable script
+	_G.Stock = false --Auto restock all racks
+	_G.Deliver = false --Auto sell everything
+
+	loadstring(game:HttpGet('https://pastebin.com/raw/VkRfdPp1'))()
+end)
 end
