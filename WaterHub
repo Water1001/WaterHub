@@ -255,4 +255,14 @@ elseif game.PlaceId == 6904320123 then
     local Autofarm = Window:NewTab("Autofarm")
     local Eggs = Window:NewTab("Eggs")
     local AutofarmSection = Autofarm:NewSection("Autofarm")
+    
+        AutofarmSection:NewToggle("Auto Farm", "Make your player collect", function(v)
+        getgenv().autofarm = v
+        while true do
+            if not getgenv().autofarm then return end
+            local Event = game:GetService("Players").Razerisgood123098.PlayerGui.UI["Render_Plot"].RemoteEvent
+Event:FireServer()
+            wait(math.huge)
+        end
+    end)
 end
