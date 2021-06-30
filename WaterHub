@@ -264,5 +264,36 @@ elseif game.PlaceId == 6904320123 then
 Event:FireServer()
             wait(math.huge)
         end
+        end)
+
+elseif game.PlaceId == 6859865958 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("WaterHub | Made By Water#1001 | Youtube Simulator", "Ocean")
+
+    -- Autofarm
+    local Autofarm = Window:NewTab("Autofarm")
+    local AutofarmSection = Autofarm:NewSection("Autofarm")
+    
+        AutofarmSection:NewToggle("Auto Click", "Make your player click", function(v)
+        getgenv().autoclick = v
+        while true do
+            if not getgenv().autoclick then return end
+local tool = game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool") or game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
+tool:Activate()
+game:GetService("ReplicatedStorage").fileMade:FireServer()
+            wait(math.huge)
+        end
+        end)
+
+        AutofarmSection:NewToggle("Auto Edit", "Make your player edit", function(v)
+        getgenv().autoedit = v
+        while true do
+            if not getgenv().autoedit then return end
+local A_1 = game:GetService("Workspace").Studios["WaterHubCreator's Studio"].Items["Starter Laptop"]
+local Event = game:GetService("ReplicatedStorage").singleVideo
+Event:FireServer(A_1)
+            wait(math.huge)
+        end
     end)
 end
